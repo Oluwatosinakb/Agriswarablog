@@ -17,6 +17,6 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Resource routes
+Route::get('/articles/manage', [ArticleController::class, 'manage'])->name('articles.manage');
 Route::resource('/articles', ArticleController::class);
 Route::resource('/categories', CategoryController::class);

@@ -1,4 +1,4 @@
-<!-- resources/views/components/hero.blade.php -->
+
 <section class="max-w-4xl mx-auto px-6 text-center py-20">
   <div class="flex justify-center items-center gap-4 text-sm mb-4">
     <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full font-medium">Popular Articles</span>

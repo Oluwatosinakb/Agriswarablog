@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = [
-        'title', 'slug', 'excerpt', 'body', 'image_path', 'category_id', 'is_published', 'published_at'
+        'title', 'slug', 'excerpt', 'body', 'image', 'category_id', 'is_published', 'published_at'
     ];
 
     protected $casts = [

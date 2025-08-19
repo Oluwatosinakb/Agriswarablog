@@ -66,7 +66,11 @@
                                 <div class="p-6">
                                     <div class="flex items-center justify-between mb-3">
                                         <p class="text-sm text-gray-500">
-                                            {{ $article->published_at->format('F j, Y') }}
+                                            @if($article->is_published && $article->published_at)
+                                                {{ $article->published_at->format('F j, Y') }}
+                                            @else
+                                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium">Draft</span>
+                                            @endif
                                         </p>
                                         @if($article->category)
                                             <span class="bg-lime-100 text-lime-800 px-2 py-1 rounded-full text-xs font-medium">
@@ -93,7 +97,7 @@
                                             </svg>
                                         </div>
                                         
-                                        <!-- Edit/Delete buttons (you can remove these if you only want authors to edit their own articles) -->
+                                        <!-- Edit/Delete buttons -->
                                         <div class="flex items-center space-x-2">
                                             <a href="{{ route('articles.edit', $article) }}" class="text-blue-600 hover:text-blue-800 text-sm">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

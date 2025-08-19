@@ -19,7 +19,13 @@
                     <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ $article->title }}</h1>
                     
                     <div class="flex items-center text-gray-600 text-sm mb-6">
-                        <span>Published on {{ $article->published_at->format('F j, Y') }}</span>
+                        @if($article->is_published && $article->published_at)
+                            <span>Published on {{ $article->published_at->format('F j, Y') }}</span>
+                        @else
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">Draft</span>
+                            <span class="mx-2">•</span>
+                            <span>Created on {{ $article->created_at->format('F j, Y') }}</span>
+                        @endif
                         @if($article->category)
                             <span class="mx-2">•</span>
                             <span class="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-xs font-medium">{{ $article->category->name }}</span>

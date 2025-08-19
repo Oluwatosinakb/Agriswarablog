@@ -126,7 +126,7 @@ class AIArticleController extends Controller
     public function testAPI()
     {
         try {
-            $apiKey = 'AIzaSyA7k_9lzh1ykTcEKHb8uy7WVBtw1oYRXk8';
+            $apiKey = '';
             
             if (!$apiKey) {
                 return response()->json(['error' => 'Gemini API key not found in environment']);
@@ -170,8 +170,8 @@ class AIArticleController extends Controller
 
     private function callGeminiAPI($prompt)
     {
-        // Hardcode the key directly for testing
-        $apiKey = 'AIzaSyA7k_9lzh1ykTcEKHb8uy7WVBtw1oYRXk8';
+        
+        $apiKey = '';//replace with your actual Gemini API key
         
         if (!$apiKey) {
             throw new \Exception('Gemini API key not configured');
